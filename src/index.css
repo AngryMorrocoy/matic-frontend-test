@@ -1,12 +1,31 @@
+:root {
+  --dark-blue: #2d314e;
+  --green: #31cf70;
+  --turquoise: #2cb9cb;
+  --body-bg: #fafafa;
+  --pale-green: #77bda3;
+  --light-gray: #959499;
+
+  --desaturated-green: #84e1a7;
+  --desaturated-turquoise: #81d6db;
+
+  --headers-fg: var(--dark-blue);
+  --normal-fg: var(--light-gray);
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Public Sans', sans-serif;
 }
 
-body, html {
+html {
   font-size: 16px;
-  font-family: 'Public Sans', sans-serif;
+}
+
+body {
+  background-color: var(--body-bg);
 }
 
 a {
