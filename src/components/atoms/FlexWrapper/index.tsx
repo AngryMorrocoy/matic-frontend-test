@@ -16,6 +16,7 @@ type FlexWrapperProps = {
 
 const FlexWrapper = styled.div<FlexWrapperProps>`
   display: flex;
+  flex-direction: ${(props) => props.direction || 'row'};
   justify-content: ${(props) => props.justify || 'normal'};
   align-items: ${(props) => props.align || 'normal'};
   gap: ${(props) => props.gap || '0'};

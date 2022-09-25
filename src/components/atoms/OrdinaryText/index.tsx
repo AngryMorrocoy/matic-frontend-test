@@ -8,14 +8,16 @@ const textSizes: { [key: string]: string } = {
 } as const;
 
 type OrdinaryTextProps = {
-  size?: 'normal' | 'small' | 'tiny' | 'diminute'
-}
+  size?: 'normal' | 'small' | 'tiny' | 'diminute';
+  lineHeight?: string;
+};
 
 const OrdinaryText = styled.p<OrdinaryTextProps>`
   color: var(--normal-fg);
   font-weight: 400;
   font-size: ${(props) =>
     props.size ? textSizes[props.size] : textSizes.normal};
+  ${(props) => props.lineHeight && `line-height: ${props.lineHeight};`}
 `;
 
 export default OrdinaryText;

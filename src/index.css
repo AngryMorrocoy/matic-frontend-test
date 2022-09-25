@@ -11,6 +11,8 @@
 
   --headers-fg: var(--dark-blue);
   --normal-fg: var(--light-gray);
+
+  --sides-separation: 10.1rem;
 }
 
 * {

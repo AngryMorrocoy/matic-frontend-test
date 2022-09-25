@@ -20,8 +20,8 @@ const GridWrapper = styled.div<GridWrapperProps>`
   justify-content: ${(props) => props.justify || 'normal'};
   align-items: ${(props) => props.align || 'normal'};
   gap: ${(props) => props.gap || '0'};
-  grid-template-rows: ${props => props.templateRows || ''}
-  grid-template-columns: ${props => props.templateColumns || ''}
+  grid-template-rows: ${props => props.templateRows || ''};
+  grid-template-columns: ${props => props.templateColumns || ''};
   ${(props) =>
     props.isMain &&
     'padding-left: var(--sides-separation);padding-right: var(--sides-separation);'}
