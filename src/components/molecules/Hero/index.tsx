@@ -1,4 +1,4 @@
-import GridWrapper from '@atoms/GridWrapper';
+import { GridWrapper } from '@atoms/Wrappers';
 import { FunctionComponent } from 'react';
 
 type HeroProps = {
@@ -11,9 +11,12 @@ const Hero: FunctionComponent<HeroProps> = ({
   className,
 }): JSX.Element => {
   return (
-    <GridWrapper isMain templateColumns="40% 60%"
-    align="center"
-    className={className}>
+    <GridWrapper
+      isMain
+      templateColumns="40% 60%"
+      align="center"
+      className={className}
+    >
       {children}
     </GridWrapper>
   );

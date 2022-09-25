@@ -1,5 +1,5 @@
 import Anchor from '@atoms/Anchor';
-import FlexWrapper from '@atoms/FlexWrapper';
+import { FlexWrapper } from '@atoms/Wrappers';
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
 
