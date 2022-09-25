@@ -16,7 +16,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
     <FlexWrapper
       className={className}
       as="nav"
-      justify="space-evenly"
+      justify="center"
       align="center"
       gap="1.875rem"
     >
@@ -26,7 +26,30 @@ const Navbar: FunctionComponent<NavbarProps> = ({
 };
 
 export default styled(Navbar)`
-  & > ${Anchor}::after {
-    content
+  flex: 1 1 0px;
+  width: 0;
+
+  ${Anchor} {
+    position: relative;
+  }
+
+  ${Anchor}::after {
+    display: none;
+
+    content: '';
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -1.1rem;
+
+    top: 170%;
+
+    background: linear-gradient(90deg, var(--green) 0%, var(--turquoise) 100%);
+  }
+
+  ${Anchor}:hover::after,
+  ${Anchor}:focus::after {
+    display: block;
   }
 `;
