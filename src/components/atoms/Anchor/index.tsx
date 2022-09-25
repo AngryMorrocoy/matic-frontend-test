@@ -1,15 +1,17 @@
-import { FunctionComponent } from 'react';
-import StyledAnchor from './Anchor.styled';
+import styled from 'styled-components';
+
+const anchorColors: { [key: string]: string } = {
+  gray: 'var(--light-gray)',
+  white: '#ffffff',
+};
 
 type AnchorProps = {
-  children?: JSX.Element | string;
-  href: string;
-  color: 'white' | 'gray'
+  color: 'white' | 'gray';
 };
 
-const Anchor: FunctionComponent<AnchorProps> = ({ children, href, color }): JSX.Element => {
-
-  return <StyledAnchor href={href} color={color}>{children}</StyledAnchor>;
-};
+const Anchor = styled.a<AnchorProps>`
+  color: ${(props) => anchorColors[props.color]};
+  font-size: 1rem;
+`;
 
 export default Anchor;

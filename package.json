@@ -13,6 +13,7 @@
     "countWords": "ts-node logic/index.ts countWords 'Hi how are things? Are you a Developer? I am also a developer'"
   },
   "dependencies": {
+    "@types/styled-components": "^5.1.26",
     "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

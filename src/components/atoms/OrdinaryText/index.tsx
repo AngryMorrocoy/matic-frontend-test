@@ -1,22 +1,21 @@
-import { FunctionComponent } from 'react';
-import StyledOrdinaryText from './OrdinaryText.styled';
+import styled from 'styled-components';
+
+const textSizes: { [key: string]: string } = {
+  normal: '1.125rem',
+  small: '1rem',
+  tiny: '0.8rem',
+  diminute: '0.625rem',
+} as const;
 
 type OrdinaryTextProps = {
-  children?: JSX.Element | string;
-  component?: 'p' | 'span';
-  size?: 'normal' | 'small' | 'tiny' | 'diminute';
-};
+  size?: 'normal' | 'small' | 'tiny' | 'diminute'
+}
 
-const OrdinaryText: FunctionComponent<OrdinaryTextProps> = ({
-  children,
-  component = 'p',
-  size = 'normal',
-}): JSX.Element => {
-  return (
-    <StyledOrdinaryText as={component} size={size}>
-      {children}
-    </StyledOrdinaryText>
-  );
-};
+const OrdinaryText = styled.p<OrdinaryTextProps>`
+  color: var(--normal-fg);
+  font-weight: 400;
+  font-size: ${(props) =>
+    props.size ? textSizes[props.size] : textSizes.normal};
+`;
 
 export default OrdinaryText;
