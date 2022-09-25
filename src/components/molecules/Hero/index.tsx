@@ -16,6 +16,7 @@ const Hero: FunctionComponent<HeroProps> = ({
       templateColumns="40% 60%"
       align="center"
       className={className}
+      bg="var(--hero-bg)"
     >
       {children}
     </GridWrapper>

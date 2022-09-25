@@ -41,9 +41,9 @@ export default styled(Navbar)`
 
     left: 0;
     right: 0;
-    bottom: -1.1rem;
+    bottom: -150%;
 
-    top: 170%;
+    top: 225%;
 
     background: linear-gradient(90deg, var(--green) 0%, var(--turquoise) 100%);
   }

@@ -13,15 +13,7 @@ interface WrapperBaseProps {
   align?: 'normal' | 'center' | 'flex-start' | 'flex-end' | 'start' | 'end';
   gap?: string;
   isMain?: boolean;
-}
-
-interface GridWrapperProps extends WrapperBaseProps {
-  templateRows?: string;
-  templateColumns?: string;
-}
-
-interface FlexWrapperProps extends WrapperBaseProps {
-  direction?: 'row' | 'column';
+  bg?: string;
 }
 
 const WrapperBase = styled.div<WrapperBaseProps>`
@@ -32,13 +24,23 @@ const WrapperBase = styled.div<WrapperBaseProps>`
     props.isMain &&
     `padding-left: var(--sides-separation);
     padding-right: var(--sides-separation);`}
+  ${(props) => props.bg && `background: ${props.bg}`}
 `;
+
+interface GridWrapperProps extends WrapperBaseProps {
+  templateRows?: string;
+  templateColumns?: string;
+}
 
 export const GridWrapper = styled(WrapperBase)<GridWrapperProps>`
   display: grid;
   grid-template-rows: ${(props) => props.templateRows || ''};
   grid-template-columns: ${(props) => props.templateColumns || ''};
 `;
+
+interface FlexWrapperProps extends WrapperBaseProps {
+  direction?: 'row' | 'column';
+}
 
 export const FlexWrapper = styled(WrapperBase)<FlexWrapperProps>`
   display: flex;
