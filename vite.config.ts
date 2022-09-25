@@ -9,7 +9,9 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@atoms': path.resolve(__dirname, './src/components/atoms')
+      '@atoms': path.resolve(__dirname, './src/components/atoms'),
+      '@molecules': path.resolve(__dirname, './src/components/molecules'),
+      '@assets': path.resolve(__dirname, './src/assets')
     }
   },
   test: {

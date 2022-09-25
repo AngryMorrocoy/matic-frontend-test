@@ -12,6 +12,7 @@ type AnchorProps = {
 const Anchor = styled.a<AnchorProps>`
   color: ${(props) => anchorColors[props.color]};
   font-size: 1rem;
+  font-weight: 500;
 `;
 
 export default Anchor;

@@ -17,7 +17,9 @@
     "jsx": "react-jsx",
     "baseUrl": "src",
     "paths": {
-      "@atoms/*": ["components/atoms/*"]
+      "@atoms/*": ["components/atoms/*"],
+      "@molecules/*": ["components/molecules/*"],
+      "@assets/*": ["assets/*"]
     }
   },
   "include": ["src"],

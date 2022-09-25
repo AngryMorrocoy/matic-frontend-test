@@ -3,11 +3,7 @@
     "composite": true,
     "module": "ESNext",
     "moduleResolution": "Node",
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": "src",
-    "path": {
-      "@atoms/*": ["components/atoms/*"]
-    }
+    "allowSyntheticDefaultImports": true
   },
   "include": ["vite.config.ts"]
 }
