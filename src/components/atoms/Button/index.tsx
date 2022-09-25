@@ -22,7 +22,7 @@ const Button = styled.button`
   font-size: 1rem;
   line-height: 7px;
 
-  &:hover {
+  &:hover, &:focus {
     background: ${buttonDefaultHoveredBg};
   }
 `;
