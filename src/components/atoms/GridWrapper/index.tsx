@@ -12,6 +12,7 @@ type GridWrapperProps= {
     | 'space-evenly';
   align?: 'normal' | 'center' | 'flex-start' | 'flex-end';
   gap?: string;
+  isMain?: boolean;
 }
 
 const GridWrapper = styled.div<GridWrapperProps>`
@@ -21,6 +22,9 @@ const GridWrapper = styled.div<GridWrapperProps>`
   gap: ${(props) => props.gap || '0'};
   grid-template-rows: ${props => props.templateRows || ''}
   grid-template-columns: ${props => props.templateColumns || ''}
+  ${(props) =>
+    props.isMain &&
+    'padding-left: var(--sides-separation);padding-right: var(--sides-separation);'}
 `;
 
 export default GridWrapper

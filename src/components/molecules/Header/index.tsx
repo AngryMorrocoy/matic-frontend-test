@@ -5,19 +5,27 @@ import styled from 'styled-components';
 type HeaderProps = {
   children?: JSX.Element | JSX.Element[];
   className?: string;
+  isMain?: boolean;
 };
 
 const Header: FunctionComponent<HeaderProps> = ({
   className,
   children,
+  isMain,
 }): JSX.Element => {
   return (
-    <FlexWrapper as="header" justify="space-around" className={className}>
+    <FlexWrapper
+      isMain={isMain}
+      as="header"
+      justify="space-between"
+      className={className}
+    >
       {children}
     </FlexWrapper>
   );
 };
 
 export default styled(Header)`
-  padding: 1.1rem 3rem;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
 `;
