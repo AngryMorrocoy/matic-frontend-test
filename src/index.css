@@ -12,6 +12,8 @@
   --headers-fg: var(--dark-blue);
   --normal-fg: var(--light-gray);
 
+  --hero-bg: #fafafa;
+
   --sides-separation: 10.1rem;
 }
 
