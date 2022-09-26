@@ -17,7 +17,7 @@ const OrdinaryText = styled.p<OrdinaryTextProps>`
   font-weight: 400;
   font-size: ${(props) =>
     props.size ? textSizes[props.size] : textSizes.normal};
-  ${(props) => props.lineHeight && `line-height: ${props.lineHeight};`}
+  line-height: ${({ lineHeight }) => lineHeight || '1.7rem'};
 `;
 
 export default OrdinaryText;
