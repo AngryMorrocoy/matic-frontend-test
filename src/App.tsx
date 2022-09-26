@@ -13,7 +13,21 @@ function App() {
   const [articles, setArticles] = useState<ArticleSchema[]>([]);
 
   useEffect(() => {
-    setArticles(getArticles());
+    let finished = false;
+    const [request, abort] = getArticles();
+
+    request
+      .then(({ data: response }) => {
+        finished = true;
+        setArticles(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    return () => {
+      if (!finished) abort.abort('Request canceled');
+    };
   }, []);
 
   return (

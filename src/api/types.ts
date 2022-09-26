@@ -7,3 +7,9 @@ export type ArticleSchema = {
   createdAt: string;
   updatedAt: string;
 };
+
+export type ArticleApiResponse = {
+  statusCode: number;
+  status: string;
+  data: ArticleSchema[]
+}
