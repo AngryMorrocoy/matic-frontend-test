@@ -14,6 +14,7 @@ const CreateArticleForm: FunctionComponent<CreateArticleFormProps> = ({
 }): JSX.Element => {
   return (
     <GridWrapper
+      as="form"
       className={className}
       gap="1.5rem"
       bg="white"
@@ -29,7 +30,7 @@ const CreateArticleForm: FunctionComponent<CreateArticleFormProps> = ({
         <TextArea id="contentInput" name="content" rows={16} />
       </FormRow>
 
-      <Button as="input" type="submit" value="Save"/>
+      <Button as="input" type="submit" value="Save" />
     </GridWrapper>
   );
 };
@@ -37,9 +38,10 @@ const CreateArticleForm: FunctionComponent<CreateArticleFormProps> = ({
 export default styled(CreateArticleForm)`
   border-radius: 2.6rem;
   box-shadow: 0px 4px 4px var(--form-border-color);
+  min-width: 49%;
   max-width: 44rem;
 
-  & input[type="submit"] {
-    margin-top: .5rem;
+  & input[type='submit'] {
+    margin-top: 0.5rem;
   }
 `;

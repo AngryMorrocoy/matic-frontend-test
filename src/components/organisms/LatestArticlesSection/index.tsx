@@ -15,7 +15,7 @@ const LatestArticlesSection: FunctionComponent<LatestArticlesSectionProps> = ({
   articles,
 }): JSX.Element => {
   return (
-    <FlexWrapper isMain padding="5rem" direction="column" gap="2.4rem">
+    <FlexWrapper isMain padding="5rem" direction="column" gap="2.4rem" bg="white">
       <Header>
         <Heading type="h2">Latest Articles</Heading>
         <Button as={Anchor} to="create-article/" color="">+ Add New Article</Button>

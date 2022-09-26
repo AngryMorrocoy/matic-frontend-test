@@ -8,7 +8,7 @@ import headerLogo from '@assets/easybank-dark-logo.svg';
 const MainHeader: FunctionComponent<{}> = ({}): JSX.Element => {
   return (
     <>
-      <Header isMain>
+      <Header isMain bg="white">
         <img src={headerLogo} alt="" />
         <Navbar>
           <Anchor to="/" color="gray">

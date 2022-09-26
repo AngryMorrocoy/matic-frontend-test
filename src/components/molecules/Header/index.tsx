@@ -6,12 +6,14 @@ type HeaderProps = {
   children?: JSX.Element | JSX.Element[];
   className?: string;
   isMain?: boolean;
+  bg?: string;
 };
 
 const Header: FunctionComponent<HeaderProps> = ({
   className,
   children,
   isMain,
+  bg,
 }): JSX.Element => {
   return (
     <FlexWrapper
@@ -19,6 +21,7 @@ const Header: FunctionComponent<HeaderProps> = ({
       as="header"
       justify="space-between"
       className={className}
+      bg={bg}
     >
       {children}
     </FlexWrapper>
