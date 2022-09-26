@@ -1,36 +1,90 @@
 import Anchor from '@atoms/Anchor';
-import Button from '@atoms/Button/';
-import Heading from '@atoms/Heading/';
+import Header from '@molecules/Header';
+import Navbar from '@molecules/Navbar';
+import Button from '@atoms/Button';
+import Hero from '@molecules/Hero';
+import { FlexWrapper, GridWrapper } from '@atoms/Wrappers';
+import Heading from '@atoms/Heading';
 import OrdinaryText from '@atoms/OrdinaryText';
-import logo from './assets/easybank-logo.svg';
+import FeatureCard from '@molecules/FeatureCard';
+import ArticleCard from '@molecules/ArticleCard';
+
+import footerLogo from '@assets/easybank-white-logo.svg';
+import iconApi from '@assets/icon-api.svg';
+import iconBudgeting from '@assets/icon-budgeting.svg';
+import iconOnBoarding from '@assets/icon-onboarding.svg';
+import iconOnline from '@assets/icon-online.svg';
+
+import iconFB from '@assets/icon-facebook.svg';
+import iconIG from '@assets/icon-instagram.svg';
+import iconPinterest from '@assets/icon-pinterest.svg';
+import iconTwitter from '@assets/icon-twitter.svg';
+import iconYt from '@assets/icon-youtube.svg';
+
+import { useState } from 'react';
+import MainHeader from '@organisms/MainHeader';
+import MainHero from '@organisms/MainHero';
+
+
+type ArticleSchema = {
+  id: string;
+  author: string;
+  title: string;
+  content: string;
+  imageUrl: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+const sampleArticles: ArticleSchema[] = [
+  {
+    author: 'asdasd',
+    title: 'aaaa',
+    content:
+      'hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola ',
+    createdAt: '2022-09-25T23:02:34.228Z',
+    updatedAt: '2022-09-25T23:02:34.228Z',
+    imageUrl: 'https://picsum.photos/533/400?random=87',
+    id: '291b7b99-55b2-4c14-b286-133518f300e3',
+  },
+  {
+    author: 'asda',
+    title: 'aaa',
+    content: 'dddd',
+    createdAt: '2022-09-25T23:03:11.892Z',
+    updatedAt: '2022-09-25T23:03:11.892Z',
+    imageUrl: 'https://picsum.photos/533/400?random=38',
+    id: 'd64667c5-d11c-4ffb-a718-78e7cf85a9e1',
+  },
+  {
+    author: 'asdasd',
+    title: 'asdasd',
+    content: 'asdasdasd',
+    createdAt: '2022-09-25T23:04:03.487Z',
+    updatedAt: '2022-09-25T23:04:03.487Z',
+    imageUrl: 'https://picsum.photos/533/400?random=25',
+    id: '73415e8b-fa70-4967-970f-74b6c5c3291b',
+  },
+  {
+    author: 'Miguel Durán',
+    title: 'New Title',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus nunc vel urna consequat porta. Vivamus erat mauris, consectetur at magna vel, congue scelerisque sem.',
+    createdAt: '2022-09-25T23:14:27.790Z',
+    updatedAt: '2022-09-25T23:14:27.790Z',
+    imageUrl: 'https://picsum.photos/533/400?random=70',
+    id: '5f91830c-ad16-4259-b6f2-4afcc8cbe6a5',
+  },
+];
 
 function App() {
-  console.log(logo);
+  const [articles, _] = useState<ArticleSchema[]>(sampleArticles);
+
   return (
     <>
 
       <MainHeader />
-
-      <Hero>
-        <FlexWrapper direction="column" align="flex-start" gap="4.2rem">
-          <Heading type="h1">Next generation digital banking</Heading>
-          <OrdinaryText>
-            Take your financial life online. Your Easybank account  will be a
-            one-stop-shop for spending, saving. budgeting, nvesting, and much
-            more.
-          </OrdinaryText>
-
-          <Button>Request invite</Button>
-        </FlexWrapper>
-        {
-          // TODO: Made this pretty haha
-        }
-        <div style={{ overflow: 'hidden' }}>
-          <img style={{ opacity: 0 }} src={heroVectors} alt="" />
-          <HeroImage src={heroVectors} alt="" />
-          <HeroImage src={mockups} alt="" />
-        </div>
-      </Hero>
+      <MainHero />
 
       <FlexWrapper
         isMain

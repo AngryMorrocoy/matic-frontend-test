@@ -3,16 +3,24 @@ import { FunctionComponent } from 'react';
 import styled from 'styled-components';
 
 type HeroProps = {
-  children?: [JSX.Element, JSX.Element];
+  children?: JSX.Element | JSX.Element[] | string;
   className?: string;
 };
+
+const StyledHero = styled(GridWrapper)`
+  position: relative;
+
+  & > * {
+    width: 100%;
+  }
+`;
 
 const Hero: FunctionComponent<HeroProps> = ({
   children,
   className,
 }): JSX.Element => {
   return (
-    <GridWrapper
+    <StyledHero
       isMain
       templateColumns="40% 60%"
       align="center"
@@ -20,14 +28,8 @@ const Hero: FunctionComponent<HeroProps> = ({
       bg="var(--hero-bg)"
     >
       {children}
-    </GridWrapper>
+    </StyledHero>
   );
 };
 
-export default styled(Hero)`
-  position: relative;
-
-  & > * {
-    width: 100%;
-  }
-`;
+export default Hero;
