@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+// Pages
 import App from './App';
 import Landing from './components/pages/Landing';
+import CreateArticle from './components/pages/CreateArticle';
+// CSS Variables
 import './index.css';
 
 const router = createBrowserRouter([
@@ -14,9 +17,7 @@ const router = createBrowserRouter([
       {
         path: 'create-article/',
         element: (
-          <>
-            <p>Works!</p>
-          </>
+          <CreateArticle />
         ),
       },
     ],
