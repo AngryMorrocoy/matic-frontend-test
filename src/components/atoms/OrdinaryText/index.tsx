@@ -9,11 +9,12 @@ const textSizes: { [key: string]: string } = {
 
 type OrdinaryTextProps = {
   size?: 'normal' | 'small' | 'tiny' | 'diminute';
+  color?: string;
   lineHeight?: string;
 };
 
 const OrdinaryText = styled.p<OrdinaryTextProps>`
-  color: var(--normal-fg);
+  color: ${({color}) => color || 'var(--normal-fg)'};
   font-weight: 400;
   font-size: ${(props) =>
     props.size ? textSizes[props.size] : textSizes.normal};
