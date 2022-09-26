@@ -12,7 +12,7 @@ export const InputText = styled(_InputText)`
   outline: none;
   border-radius: 0.375rem;
 
-  box-shadow: 0px 1px 2px #d1d5db;
+  box-shadow: 0px 1px 2px var(--form-border-color);
 
   min-width: 100%;
   resize: vertical;
