@@ -1,5 +1,6 @@
 import { GridWrapper } from '@atoms/Wrappers';
 import { FunctionComponent } from 'react';
+import styled from 'styled-components';
 
 type HeroProps = {
   children?: [JSX.Element, JSX.Element];
@@ -23,4 +24,10 @@ const Hero: FunctionComponent<HeroProps> = ({
   );
 };
 
-export default Hero;
+export default styled(Hero)`
+  position: relative;
+
+  & > * {
+    width: 100%;
+  }
+`;
