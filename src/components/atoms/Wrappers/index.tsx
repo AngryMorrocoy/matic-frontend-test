@@ -14,6 +14,7 @@ interface WrapperBaseProps {
   gap?: string;
   isMain?: boolean;
   bg?: string;
+  padding?: string;
 }
 
 const WrapperBase = styled.div<WrapperBaseProps>`
@@ -25,6 +26,7 @@ const WrapperBase = styled.div<WrapperBaseProps>`
     `padding-left: var(--sides-separation);
     padding-right: var(--sides-separation);`}
   ${(props) => props.bg && `background: ${props.bg}`}
+  ${(props) => props.padding && `padding: ${props.padding}`}
 `;
 
 interface GridWrapperProps extends WrapperBaseProps {
