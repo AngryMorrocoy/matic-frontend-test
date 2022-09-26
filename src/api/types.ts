@@ -1,3 +1,8 @@
+interface BaseApiResponse {
+  statusCode: number;
+  status: string;
+}
+
 export type ArticleSchema = {
   id: string;
   author: string;
@@ -8,8 +13,16 @@ export type ArticleSchema = {
   updatedAt: string;
 };
 
-export type ArticleApiResponse = {
-  statusCode: number;
-  status: string;
-  data: ArticleSchema[]
+export interface GetArticlesApiResponse extends BaseApiResponse {
+  data: ArticleSchema[];
 }
+
+export interface PostArticlesApiResponse extends BaseApiResponse {
+  data: ArticleSchema;
+}
+
+export type ArticlePostDataSchema = {
+  author: string;
+  title: string;
+  content: string;
+};

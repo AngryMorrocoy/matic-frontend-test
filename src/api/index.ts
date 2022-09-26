@@ -1,5 +1,9 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
-import { ArticleApiResponse } from './types';
+import {
+  GetArticlesApiResponse,
+  ArticlePostDataSchema,
+  PostArticlesApiResponse,
+} from './types';
 
 const baseURL = 'https://www.api.recruitment.matic.io';
 
@@ -11,10 +15,30 @@ function getApi(): [AxiosInstance, AbortController] {
 }
 
 export function getArticles(): [
-  Promise<AxiosResponse<ArticleApiResponse>>,
+  Promise<AxiosResponse<GetArticlesApiResponse>>,
   AbortController
 ] {
   const [api, apiController] = getApi();
 
   return [api.get('articles'), apiController];
+}
+
+export function createArticle({
+  author,
+  title,
+  content,
+}: ArticlePostDataSchema): [
+  Promise<AxiosResponse<PostArticlesApiResponse>>,
+  AbortController
+] {
+  const [api, apiController] = getApi();
+
+  return [
+    api.post('/articles', {
+      author,
+      title,
+      content,
+    }),
+    apiController,
+  ];
 }
