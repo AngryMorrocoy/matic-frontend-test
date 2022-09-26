@@ -26,6 +26,7 @@
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }],
+  "files": ["custom.ts.d"],
   "ts-node": {
     "transpileOnly": true,
     "moduleTypes": {
