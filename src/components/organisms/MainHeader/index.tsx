@@ -11,19 +11,19 @@ const MainHeader: FunctionComponent<{}> = ({}): JSX.Element => {
       <Header isMain>
         <img src={headerLogo} alt="" />
         <Navbar>
-          <Anchor href="#" color="gray">
+          <Anchor to="/" color="gray">
             Home
           </Anchor>
-          <Anchor href="#" color="gray">
+          <Anchor to="#" color="gray">
             About
           </Anchor>
-          <Anchor href="#" color="gray">
+          <Anchor to="#" color="gray">
             Contact
           </Anchor>
-          <Anchor href="#" color="gray">
+          <Anchor to="#" color="gray">
             Blog
           </Anchor>
-          <Anchor href="#" color="gray">
+          <Anchor to="#" color="gray">
             Careers
           </Anchor>
         </Navbar>

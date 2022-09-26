@@ -22,6 +22,10 @@ const Button = styled.button`
   font-size: 1rem;
   line-height: 7px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   &:hover, &:focus {
     background: ${buttonDefaultHoveredBg};
   }

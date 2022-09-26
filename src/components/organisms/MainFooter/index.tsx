@@ -28,12 +28,12 @@ const MainFooter: FunctionComponent<{ className?: string }> = ({
   className,
 }): JSX.Element => {
   const footerLinks = [
-    { text: 'About Us', href: '#' },
-    { text: 'Careers', href: '#' },
-    { text: 'Contact', href: '#' },
-    { text: 'Support', href: '#' },
-    { text: 'Blog', href: '#' },
-    { text: 'Privacy Policy', href: '#' },
+    { text: 'About Us', to: '#' },
+    { text: 'Careers', to: '#' },
+    { text: 'Contact', to: '#' },
+    { text: 'Support', to: '#' },
+    { text: 'Blog', to: '#' },
+    { text: 'Privacy Policy', to: '#' },
   ];
 
   return (
@@ -50,26 +50,26 @@ const MainFooter: FunctionComponent<{ className?: string }> = ({
           <img src={footerLogo} alt="" />
           {/* TODO: Extract this into a cleaner component */}
           <FlexWrapper justify="space-around">
-            <SvgAnchor color="white" href="#">
+            <SvgAnchor color="white" to="#">
               <FacebookIcon className="svg-link" />
             </SvgAnchor>
-            <SvgAnchor color="white" href="#">
+            <SvgAnchor color="white" to="#">
               <YoutubeIcon className="svg-link" />
             </SvgAnchor>
-            <SvgAnchor color="white" href="#">
+            <SvgAnchor color="white" to="#">
               <TwitterIcon className="svg-link" />
             </SvgAnchor>
-            <SvgAnchor color="white" href="#">
+            <SvgAnchor color="white" to="#">
               <PinterestIcon className="svg-link" />
             </SvgAnchor>
-            <SvgAnchor color="white" href="#">
+            <SvgAnchor color="white" to="#">
               <InstagramIcon className="svg-link" />
             </SvgAnchor>
           </FlexWrapper>
         </FlexWrapper>
         <GridWrapper templateColumns="repeat(2, auto)" gap="1.1rem 8rem">
-          {footerLinks.map(({ text, href }, idx) => (
-            <FooterAnchor color="white" href={href} key={idx}>
+          {footerLinks.map(({ text, to }, idx) => (
+            <FooterAnchor color="white" to={to} key={idx}>
               {text}
             </FooterAnchor>
           ))}

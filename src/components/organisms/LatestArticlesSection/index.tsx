@@ -5,6 +5,7 @@ import Heading from '@atoms/Heading';
 import ArticleCard from '@molecules/ArticleCard';
 import Header from '@molecules/Header';
 import { ArticleSchema } from '@api/types';
+import Anchor from '@atoms/Anchor';
 
 type LatestArticlesSectionProps = {
   articles: ArticleSchema[];
@@ -17,7 +18,7 @@ const LatestArticlesSection: FunctionComponent<LatestArticlesSectionProps> = ({
     <FlexWrapper isMain padding="5rem" direction="column" gap="2.4rem">
       <Header>
         <Heading type="h2">Latest Articles</Heading>
-        <Button>+ Add New Article</Button>
+        <Button as={Anchor} to="create-article/" color="">+ Add New Article</Button>
       </Header>
       <GridWrapper
         justify="space-between"

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 type anchorStates = {
   default: string;
@@ -11,18 +12,23 @@ const anchorColors: { [key: string]: anchorStates } = {
 };
 
 type AnchorProps = {
-  color: 'white' | 'gray';
+  color?: 'white' | 'gray';
 };
 
-const Anchor = styled.a<AnchorProps>`
-  color: ${(props) => anchorColors[props.color].default};
-  font-size: 1rem;
-  font-weight: 500;
+const Anchor = styled(Link)<AnchorProps>`
+  ${({ color }) =>
+  color
+    ? `
+  color: ${anchorColors[color].default};
 
   &:hover,
   &:focus {
-    color: ${(props) => anchorColors[props.color].active};
+    color: ${anchorColors[color].active};
   }
+  `
+  : ''}
+  font-size: 1rem;
+  font-weight: 500;
 `;
 
 export default Anchor;

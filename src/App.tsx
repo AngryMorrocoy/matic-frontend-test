@@ -1,13 +1,12 @@
-// Utilities
-import { useEffect, useState } from 'react';
-import { ArticleSchema } from '@api/types';
-import { getArticles } from './api';
-// Components
+// Routing imports
 import MainHeader from '@organisms/MainHeader';
-import MainHero from '@organisms/MainHero';
-import WhySection from '@organisms/WhySection';
 import LatestArticlesSection from '@organisms/LatestArticlesSection';
 import MainFooter from '@organisms/MainFooter';
+import { useState, useEffect } from 'react';
+import { ArticleSchema } from '@api/types';
+import { getArticles } from './api';
+import axios from 'axios';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   const [articles, setArticles] = useState<ArticleSchema[]>([]);
@@ -22,21 +21,22 @@ function App() {
         setArticles(response.data);
       })
       .catch((err) => {
-        console.log(err);
+        if (axios.isCancel(err)) {
+          console.log('Canceled: ', err.message);
+        }
       });
 
     return () => {
-      if (!finished) abort.abort('Request canceled');
+      if (!finished) abort.abort();
     };
   }, []);
 
   return (
     <>
       <MainHeader />
-
-      <MainHero />
-      <WhySection />
-
+      <>
+        <Outlet />
+      </>
       <LatestArticlesSection articles={articles.slice(0, 4)} />
       <MainFooter />
     </>
