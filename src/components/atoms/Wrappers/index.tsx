@@ -21,11 +21,11 @@ const WrapperBase = styled.div<WrapperBaseProps>`
   justify-content: ${(props) => props.justify || 'normal'};
   align-items: ${(props) => props.align || 'normal'};
   gap: ${(props) => props.gap || '0'};
+  ${(props) => props.padding && `padding: ${props.padding};`}
   ${(props) =>
     props.isMain &&
     `padding-left: var(--sides-separation);
     padding-right: var(--sides-separation);`}
-  ${(props) => props.padding && `padding: ${props.padding};`}
   ${(props) => props.bg && `background: ${props.bg};`}
 `;
 
