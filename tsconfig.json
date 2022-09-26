@@ -19,6 +19,7 @@
     "paths": {
       "@atoms/*": ["components/atoms/*"],
       "@molecules/*": ["components/molecules/*"],
+      "@organisms/*": ["components/organisms/*"],
       "@assets/*": ["assets/*"]
     }
   },
