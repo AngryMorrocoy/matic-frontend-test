@@ -37,11 +37,11 @@ const ArticleCard: FunctionComponent<ArticleCardProps> = ({
   return (
     <FlexWrapper className={className} direction="column">
       <CardImg src={imageUrl} alt="" />
-      <FlexWrapper direction="column" padding="2.2rem 1.625rem 1.2rem">
+      <FlexWrapper direction="column" padding="2.2rem 1.625rem 1.2rem" gap="0.7rem">
         <OrdinaryText as="span" size="diminute" lineHeight="1.1rem">
           By {author}
         </OrdinaryText>
-        <Heading type="h4">{title}</Heading>
+        <Heading lineHeight="1.375rem" type="h4">{title}</Heading>
         <CardContent size="tiny">{content}</CardContent>
       </FlexWrapper>
     </FlexWrapper>

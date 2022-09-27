@@ -1,10 +1,11 @@
+import { createArticle } from '@api/index';
 import Heading from '@atoms/Heading';
 import OrdinaryText from '@atoms/OrdinaryText';
 import { FlexWrapper, GridWrapper } from '@atoms/Wrappers';
 import CreateArticleForm from '@organisms/CreateArticleForm';
 import { FunctionComponent } from 'react';
 
-const CreateArticle: FunctionComponent<{}> = ({}): JSX.Element => {
+const ArticlesCrud: FunctionComponent<{}> = ({}): JSX.Element => {
   return (
     <FlexWrapper
       isMain
@@ -21,10 +22,19 @@ const CreateArticle: FunctionComponent<{}> = ({}): JSX.Element => {
       </GridWrapper>
 
       <FlexWrapper align="center" justify="center">
-        <CreateArticleForm />
+        <CreateArticleForm
+          onSubmit={(newArticle, setFinished) => {
+            const [request, _] = createArticle({ ...newArticle });
+
+            request.then(({ data: response }) => {
+              console.log(response.data);
+              setFinished();
+            });
+          }}
+        />
       </FlexWrapper>
     </FlexWrapper>
   );
 };
 
-export default CreateArticle;
+export default ArticlesCrud;

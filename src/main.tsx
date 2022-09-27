@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 // Pages
 import App from './App';
 import Landing from './components/pages/Landing';
-import CreateArticle from './components/pages/CreateArticle';
+import ArticlesCRUD from './components/pages/ArticlesCRUD';
 // CSS Variables
 import './index.css';
 
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       {
         path: 'create-article/',
         element: (
-          <CreateArticle />
+          <ArticlesCRUD />
         ),
       },
     ],

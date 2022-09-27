@@ -11,12 +11,14 @@ const headingSizes: { [key: string]: string } = {
 
 type HeadingProps = {
   type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  lineHeight?: string;
 };
 
 const Heading = styled.h1<HeadingProps>`
   font-style: normal;
   font-weight: 400;
-  line-height: 3.875rem;
+  line-height: ${({ lineHeight }) =>
+    lineHeight || 'var(--heading-line-height)'};
   color: var(--headers-fg);
 
   font-size: ${(props) => headingSizes[props.type]};

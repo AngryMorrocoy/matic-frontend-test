@@ -15,16 +15,18 @@ function App() {
     let finished = false;
     const [request, abort] = getArticles();
 
-    request
-      .then(({ data: response }) => {
-        finished = true;
+    const retrieveAndUpdateArticles = async () => {
+      try {
+        const { data: response } = await request;
         setArticles(response.data);
-      })
-      .catch((err) => {
-        if (axios.isCancel(err)) {
-          console.log('Canceled: ', err.message);
-        }
-      });
+
+        finished = true;
+      } catch (err) {
+        if (axios.isCancel(err)) return;
+      }
+    };
+
+    retrieveAndUpdateArticles();
 
     return () => {
       if (!finished) abort.abort();
@@ -37,7 +39,9 @@ function App() {
       <>
         <Outlet />
       </>
-      <LatestArticlesSection articles={articles.slice(0, 4)} />
+      <LatestArticlesSection
+        articles={articles.slice(articles.length - 4).reverse()}
+      />
       <MainFooter />
     </>
   );

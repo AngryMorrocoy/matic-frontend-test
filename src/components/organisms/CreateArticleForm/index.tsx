@@ -8,7 +8,10 @@ import styled from 'styled-components';
 
 type CreateArticleFormProps = {
   className?: string;
-  onSubmit: (newArticle: ArticlePostDataSchema, onFinish: () => void) => void;
+  onSubmit: (
+    newArticle: ArticlePostDataSchema,
+    setFinished: () => void
+  ) => void;
 };
 
 const CreateArticleForm: FunctionComponent<CreateArticleFormProps> = ({
@@ -31,7 +34,12 @@ const CreateArticleForm: FunctionComponent<CreateArticleFormProps> = ({
         title,
         content,
       },
-      () => setSubmitted(false)
+      () => {
+        setAuthor('');
+        setTitle('');
+        setContent('');
+        setSubmitted(false);
+      }
     );
   };
 
