@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { TRow } from '@atoms/Table';
-import Button from '@atoms/Button';
+import { BaseButton } from '@atoms/Button';
 
 export const StyledTRow = styled(TRow)`
   td {
@@ -27,17 +27,10 @@ type ActionButtonProps = {
   action: 'edit' | 'delete';
 };
 
-export const ActionButton = styled(Button)<ActionButtonProps>`
-  padding: 0;
-  border: none;
-  background: none;
-  &:hover,
-  &:focus {
-    background: none;
-  }
-
+export const ActionButton = styled(BaseButton)<ActionButtonProps>`
   color: ${({ action }) =>
     action === 'edit' ? 'var(--success-color)' : 'var(--warning-color)'};
+  font-weight: 700;
 
   display: inline;
 `;
