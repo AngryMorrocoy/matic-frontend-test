@@ -1,17 +1,40 @@
+import { ArticlePostDataSchema } from '@api/types';
 import Button from '@atoms/Button';
 import { InputText, TextArea } from '@atoms/InputText';
 import { GridWrapper } from '@atoms/Wrappers';
 import FormRow from '@molecules/FormRow';
-import { FunctionComponent } from 'react';
+import { FormEvent, FunctionComponent, useState } from 'react';
 import styled from 'styled-components';
 
 type CreateArticleFormProps = {
   className?: string;
+  onSubmit: (newArticle: ArticlePostDataSchema, onFinish: () => void) => void;
 };
 
 const CreateArticleForm: FunctionComponent<CreateArticleFormProps> = ({
   className,
+  onSubmit,
 }): JSX.Element => {
+  const [author, setAuthor] = useState<string>('');
+  const [title, setTitle] = useState<string>('');
+  const [content, setContent] = useState<string>('');
+  const [submitted, setSubmitted] = useState<boolean>(false);
+
+  const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
+    setSubmitted(true);
+    if (![author, title, content].every((v) => v)) return;
+
+    onSubmit(
+      {
+        author,
+        title,
+        content,
+      },
+      () => setSubmitted(false)
+    );
+  };
+
   return (
     <GridWrapper
       as="form"
@@ -19,15 +42,35 @@ const CreateArticleForm: FunctionComponent<CreateArticleFormProps> = ({
       gap="1.5rem"
       bg="white"
       padding="2.6rem 4.5rem"
+      onSubmit={handleSubmit}
     >
       <FormRow label="Author">
-        <InputText id="authorInput" name="author" />
+        <InputText
+          className={submitted && !author ? 'invalid' : ''}
+          onChange={(evt) => setAuthor(evt.target.value)}
+          value={author}
+          id="authorInput"
+          name="author"
+        />
       </FormRow>
       <FormRow label="Blog Title">
-        <InputText id="titleInput" name="title" />
+        <InputText
+          className={submitted && !title ? 'invalid' : ''}
+          onChange={(evt) => setTitle(evt.target.value)}
+          value={title}
+          id="titleInput"
+          name="title"
+        />
       </FormRow>
       <FormRow label="Blog Content">
-        <TextArea id="contentInput" name="content" rows={16} />
+        <TextArea
+          className={submitted && !content ? 'invalid' : ''}
+          onChange={(evt) => setContent(evt.target.value)}
+          value={content}
+          id="contentInput"
+          name="content"
+          rows={16}
+        />
       </FormRow>
 
       <Button as="input" type="submit" value="Save" />

@@ -16,6 +16,10 @@ export const InputText = styled(_InputText)`
 
   min-width: 100%;
   resize: vertical;
+
+  &.invalid {
+    box-shadow: 0px 0px 3px red;
+  }
 `;
 
 export const TextArea = (
