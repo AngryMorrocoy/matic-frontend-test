@@ -3,6 +3,7 @@ import {
   GetArticlesApiResponse,
   ArticlePostDataSchema,
   PostArticlesApiResponse,
+  DeleteArticleApiResponse,
 } from './types';
 
 const baseURL = 'https://www.api.recruitment.matic.io';
@@ -41,4 +42,12 @@ export function createArticle({
     }),
     apiController,
   ];
+}
+
+export function deleteArticle(
+  articleId: string
+): [Promise<AxiosResponse<DeleteArticleApiResponse>>, AbortController] {
+  const [api, apiController] = getApi();
+
+  return [api.delete(`/articles/${articleId}`), apiController];
 }

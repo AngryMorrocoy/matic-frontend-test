@@ -6,12 +6,18 @@ const buttonDefaultBg =
 const buttonDefaultHoveredBg =
   'linear-gradient( 90deg, var(--desaturated-green) 4.85%, var(--desaturated-turquoise) 100%)';
 
-export const BaseButton = styled.button`
+type BaseButtonProps = {
+  color?: string;
+};
+
+export const BaseButton = styled.button<BaseButtonProps>`
   background: none;
   border: none;
   cursor: pointer;
   outline: none;
-`
+
+  ${({ color }) => color && `color: ${color};`}
+`;
 
 const Button = styled(BaseButton)`
   background: ${buttonDefaultBg};
@@ -30,7 +36,8 @@ const Button = styled(BaseButton)`
   align-items: center;
   justify-content: center;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background: ${buttonDefaultHoveredBg};
   }
 `;

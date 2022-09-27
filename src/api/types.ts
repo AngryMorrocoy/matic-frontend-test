@@ -3,6 +3,18 @@ interface BaseApiResponse {
   status: string;
 }
 
+export interface GetArticlesApiResponse extends BaseApiResponse {
+  data: ArticleSchema[];
+}
+
+export interface PostArticlesApiResponse extends BaseApiResponse {
+  data: ArticleSchema;
+}
+
+export interface DeleteArticleApiResponse extends BaseApiResponse {
+  message: string;
+}
+
 export type ArticleSchema = {
   id: string;
   author: string;
@@ -12,14 +24,6 @@ export type ArticleSchema = {
   createdAt: string;
   updatedAt: string;
 };
-
-export interface GetArticlesApiResponse extends BaseApiResponse {
-  data: ArticleSchema[];
-}
-
-export interface PostArticlesApiResponse extends BaseApiResponse {
-  data: ArticleSchema;
-}
 
 export type ArticlePostDataSchema = {
   author: string;
