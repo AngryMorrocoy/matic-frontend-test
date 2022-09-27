@@ -5,6 +5,7 @@ import MainFooter from '@organisms/MainFooter';
 import { Outlet } from 'react-router-dom';
 import useArticles from '@hooks/useArticles';
 import ArticleContext from '@context/ArticleContext';
+import { sortArticlesByDate } from './utils';
 
 function App() {
   const { articles, setArticles } = useArticles();
@@ -18,7 +19,7 @@ function App() {
         <Outlet />
       </ArticleContext.Provider>
       <LatestArticlesSection
-        articles={articles.slice(articles.length - 4).reverse()}
+        articles={sortArticlesByDate(articles).slice(0, 4)}
       />
       <MainFooter />
     </>
