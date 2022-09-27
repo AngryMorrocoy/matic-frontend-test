@@ -1,5 +1,5 @@
-import { deleteArticle } from '@api/index';
-import { ArticleSchema } from '@api/types';
+import { deleteArticle, editArticle } from '@api/index';
+import { ArticlePostDataSchema, ArticleSchema } from '@api/types';
 import { FlexWrapper } from '@atoms/Wrappers';
 import ArticleContext from '@context/ArticleContext';
 import ArticleList from '@molecules/ArticleList';
@@ -30,7 +30,35 @@ const ArticlesNavigator: FunctionComponent<{}> = ({}): JSX.Element => {
         <FlexWrapper direction="column" gap="3rem">
           <ArticleList
             articles={paginateArticles(articles)}
-            onEdit={(articleId) => console.log('Editing', articleId)}
+            onEdit={(articleId) => {
+              const idx = articles.findIndex(({ id }) => id === articleId);
+              const oldArticle = articles[idx];
+
+              const newArticle: ArticlePostDataSchema = {
+                author: window.prompt('New author', oldArticle.author),
+                title: window.prompt('title', oldArticle.title),
+                content: window.prompt('content', oldArticle.content),
+              } as ArticlePostDataSchema;
+
+              console.log(newArticle);
+
+              const [request, _] = editArticle(articleId, newArticle);
+
+              request
+                .then(() => {
+                  const newArticles = articles
+                    .slice(0, idx)
+                    .concat(articles.slice(idx + 1));
+                  updateArticles(newArticles);
+                })
+                .catch((err) => {
+                  alert(
+                    "Didn't managed to implement a proper editing" +
+                      'check console for details'
+                  );
+                  console.error(err.message);
+                });
+            }}
             onDelete={(articleId) => {
               const [request, _] = deleteArticle(articleId);
               const idx = articles.findIndex(({ id }) => id === articleId);

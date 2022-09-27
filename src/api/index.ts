@@ -51,3 +51,12 @@ export function deleteArticle(
 
   return [api.delete(`/articles/${articleId}`), apiController];
 }
+
+export function editArticle(
+  articleId: string,
+  newArticle: ArticlePostDataSchema
+): [Promise<AxiosResponse<DeleteArticleApiResponse>>, AbortController] {
+  const [api, apiController] = getApi();
+
+  return [api.patch(`/articles/${articleId}`, newArticle), apiController];
+}
