@@ -97,5 +97,5 @@ const PagesNavigator: FunctionComponent<ArticleListNavigatorProps> = ({
 };
 
 export default styled(PagesNavigator)`
-  width: 100%;
+  max-width: 100%;
 `;
