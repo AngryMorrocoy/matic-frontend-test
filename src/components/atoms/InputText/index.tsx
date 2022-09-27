@@ -18,7 +18,7 @@ export const InputText = styled(_InputText)`
   resize: vertical;
 
   &.invalid {
-    box-shadow: 0px 0px 3px red;
+    box-shadow: 0px 0px 3px var(--warning-color);
   }
 `;
 
