@@ -8,12 +8,12 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest",
+    "part1-test": "vitest --run logic",
     "fibo": "ts-node logic/index.ts fibo 10",
     "fizzBuzz": "ts-node logic/index.ts fizzBuzz 100",
     "countWords": "ts-node logic/index.ts countWords 'Hi how are things? Are you a Developer? I am also a developer'"
   },
   "dependencies": {
-    "@types/styled-components": "^5.1.26",
     "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -23,6 +23,7 @@
     "vite-plugin-svgr": "^2.2.1"
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.26",
     "@testing-library/react": "^13.4.0",
     "@types/node": "^18.7.20",
     "@types/react": "^18.0.17",
