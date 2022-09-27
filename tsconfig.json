@@ -22,7 +22,8 @@
       "@organisms/*": ["components/organisms/*"],
       "@assets/*": ["assets/*"],
       "@api/*": ["api/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@hooks/*": ["hooks/*"]
     }
   },
   "include": ["src"],
