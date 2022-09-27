@@ -38,14 +38,25 @@ export const TRow = styled.tr`
 `;
 
 export const THead = styled.thead`
-  th,
-  td {
+  position: relative;
+
+  th, td {
     background-color: var(--table-heading-bg);
     font-weight: 500;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     text-transform: uppercase;
-    border-bottom: 1px solid var(--table-border-color);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: calc(100% - 1px);
+
+    background: var(--table-border-color);
   }
 `;
 
