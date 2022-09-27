@@ -1,18 +1,17 @@
-# TOC
-- [Matic Frontend Test](#matic-frontend-test)
-  * [Why just one repo?](#why-just-one-repo-)
-  * [Cloning](#cloning)
-  * [Part one](#part-one)
-    + [Fibonacci](#fibonacci)
-    + [Word count](#word-count)
-    + [Fizz Buzz](#fizz-buzz)
-  * [Part two](#part-two)
-    + [Vite(st)?](#vite-st--)
-    + [Axios](#axios)
-    + [React-router](#react-router)
-    + [Styled-components](#styled-components)
+# Table of contents
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+- [Matic Frontend Test](#matic-frontend-test)
+  - [Why just one repo?](#why-just-one-repo)
+  - [Cloning](#cloning)
+  - [Part one](#part-one)
+    - [Fibonacci](#fibonacci)
+    - [Word count](#word-count)
+    - [Fizz Buzz](#fizz-buzz)
+  - [Part two](#part-two)
+    - [Vite(st)?](#vitest)
+    - [Axios](#axios)
+    - [React-router](#react-router)
+    - [Styled-components](#styled-components)
 
 # Matic Frontend Test
 
