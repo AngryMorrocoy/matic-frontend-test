@@ -1,5 +1,5 @@
 # Table of contents
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ee34684c-46f4-42fa-bb4c-10a8449d1fdf/deploy-status)](https://app.netlify.com/sites/mr-matic-easybank/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ee34684c-46f4-42fa-bb4c-10a8449d1fdf/deploy-status)](https://mr-matic-easybank.netlify.app/)
 
 - [Matic Frontend Test](#matic-frontend-test)
   - [Why just one repo?](#why-just-one-repo)
