@@ -21,7 +21,8 @@
       "@molecules/*": ["components/molecules/*"],
       "@organisms/*": ["components/organisms/*"],
       "@assets/*": ["assets/*"],
-      "@api/*": ["api/*"]
+      "@api/*": ["api/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["src"],

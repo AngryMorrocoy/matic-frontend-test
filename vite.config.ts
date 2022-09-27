@@ -15,7 +15,8 @@ export default defineConfig({
       '@molecules': path.resolve(__dirname, './src/components/molecules'),
       '@organisms': path.resolve(__dirname, './src/components/organisms'),
       '@assets': path.resolve(__dirname, './src/assets'),
-      '@api': path.resolve(__dirname, './src/api/'),
+      '@utils': path.resolve(__dirname, './src/utils'),
+      '@api': path.resolve(__dirname, './src/api')
     },
   },
   test: {
