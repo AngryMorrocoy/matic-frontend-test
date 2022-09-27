@@ -23,7 +23,8 @@
       "@assets/*": ["assets/*"],
       "@api/*": ["api/*"],
       "@utils/*": ["utils/*"],
-      "@hooks/*": ["hooks/*"]
+      "@hooks/*": ["hooks/*"],
+      "@context/*": ["context/*"]
     }
   },
   "include": ["src"],
