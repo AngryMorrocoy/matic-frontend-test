@@ -29,7 +29,7 @@
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }],
-  "files": ["custom.ts.d"],
+  "files": ["custom.d.ts"],
   "ts-node": {
     "transpileOnly": true,
     "moduleTypes": {
